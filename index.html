@@ -76,7 +76,8 @@
 
             <div class="form-container">
                 <!-- data-netlify="true" transforme ce formulaire en base de données instantanée sur Netlify -->
-                <form action="https://formspree.io/f/mzerzvkk" method="POST" data-netlify="true">
+                <form action="https://formspree.io/f/mzerzvkk" method="POST"
+                    onsubmit="event.preventDefault(); fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } }).then(res => { if (res.ok) window.location.href = '/forfait.html'; else alert('Submission failed.'); });">
 
                     <div class="form-group">
                         <label for="bizname">Nom de l'entreprise</label>
@@ -95,8 +96,10 @@
                             site</label>
                         <input type="freetext" id="projectdescription" name="description"
                             placeholder=" Veuillez entrer une courte description de votre site désiré" required>
-                        <label for="projectdescription">Une bref description de ce que vous rechercher sur votre site</label>
-                        <input type="freetext" id="projectdescription" name="description" placeholder=" Veuillez entrer une courte description de votre site désiré" required>
+                        <label for="projectdescription">Une bref description de ce que vous rechercher sur votre
+                            site</label>
+                        <input type="freetext" id="projectdescription" name="description"
+                            placeholder=" Veuillez entrer une courte description de votre site désiré" required>
 
                     </div>
 
@@ -115,8 +118,7 @@
                         <input type="hidden" id="uploaded-file-key" name="r2_file_key" />
                     </div>
 
-                    <a href="forfait.html" class="button3">Veuillez choisir le forfait désiré</a>
-                    <button type="submit" class="formsubmit">Envoyer</button>
+                    <button type="submit" class="formsubmit">Envoyer et procéder au paiement</button>
 
                 </form>
 
